@@ -36,13 +36,7 @@ APRSD Yahoo Finance Stock Quotes
 Features
 --------
 
-* TODO
-
-
-Requirements
-------------
-
-* TODO
+* APRSD Plugin that gets a stock quote from Yahoo Finance python API and returns that.
 
 
 Installation
