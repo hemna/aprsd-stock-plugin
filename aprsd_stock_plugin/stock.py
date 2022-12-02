@@ -2,7 +2,7 @@ import logging
 import re
 
 import yfinance as yf
-from aprsd import plugin, trace
+from aprsd import plugin
 
 import aprsd_stock_plugin
 
@@ -26,7 +26,6 @@ class YahooStockQuote(plugin.APRSDRegexCommandPluginBase):
         # Do some checks here?
         self.enabled = True
 
-    @trace.trace
     def process(self, packet):
         LOG.info(self.__class__.__name__)
 
