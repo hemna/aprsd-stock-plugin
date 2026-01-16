@@ -6,12 +6,10 @@ from aprsd import plugin
 
 import aprsd_stock_plugin
 
-
 LOG = logging.getLogger("APRSD")
 
 
 class YahooStockQuote(plugin.APRSDRegexCommandPluginBase):
-
     version = aprsd_stock_plugin.__version__
 
     # Look for any command that starts with s or S

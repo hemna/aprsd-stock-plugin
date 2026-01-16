@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "pbr>=5.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aprsd-stock-plugin"
+dynamic = ["version"]
+description = "Ham Radio APRSD Plugin for fetching stock quotes"
+readme = "README.rst"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Walter A. Boring IV", email = "waboring@hemna.com"}
+]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Communications :: Ham Radio",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "aprsd>=4.2.0",
+    "yfinance",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip",
+    "pip-tools",
+    "bump2version",
+    "wheel",
+    "watchdog",
+    "ruff",
+    "tox",
+    "coverage",
+    "Sphinx",
+    "twine",
+    "pytest",
+    "tox-uv",
+]
+
+[tool.setuptools]
+packages = ["aprsd_stock_plugin"]
+
+[tool.setuptools.package-data]
+"*" = ["LICENSE"]
+
+[tool.pbr]
+# PBR configuration for version management
+
+[tool.mypy]
+ignore_missing_imports = true
+strict = true
+
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E203"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["aprsd_stock_plugin"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
