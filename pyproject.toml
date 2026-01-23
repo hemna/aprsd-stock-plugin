@@ -21,6 +21,7 @@ classifiers = [
 ]
 dependencies = [
     "aprsd>=4.2.0",
+    "oslo-config",
     "yfinance",
 ]
 
@@ -39,6 +40,12 @@ dev = [
     "pytest",
     "tox-uv",
 ]
+
+[project.entry-points."oslo.config.opts"]
+    "aprsd_stock_plugin.conf" = "aprsd_stock_plugin.conf.opts:list_opts"
+
+[project.scripts]
+    "aprsd-stock-plugin-export-config" = "aprsd_stock_plugin.cli:main"
 
 [tool.setuptools]
 packages = ["aprsd_stock_plugin"]
