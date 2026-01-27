@@ -1,3 +1,2 @@
 pbr
-aprsd>=4.2.0
 yfinance
