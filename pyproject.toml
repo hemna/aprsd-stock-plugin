@@ -20,7 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
-    "oslo-config",
+    "oslo.config",
     "yfinance",
 ]
 
