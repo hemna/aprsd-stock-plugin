@@ -47,7 +47,7 @@ dev = [
     "aprsd-stock-plugin-export-config" = "aprsd_stock_plugin.cli:main"
 
 [tool.setuptools]
-packages = {find = {}}
+packages = ["aprsd_stock_plugin", "aprsd_stock_plugin.conf"]
 
 [tool.setuptools.package-data]
 "*" = ["LICENSE"]
